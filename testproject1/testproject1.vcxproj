@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AHello.c" />
     <ClCompile Include="book.c" />
     <ClCompile Include="borrow.c" />
     <ClCompile Include="main.c" />
