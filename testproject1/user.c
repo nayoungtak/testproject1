@@ -1,3 +1,4 @@
+// user : 사용자 관리 (회원가입, 로그인)
 #define _CRT_SECURE_NO_WARNINGS
 #include "user.h"
 #include <stdio.h>

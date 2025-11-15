@@ -1,3 +1,4 @@
+// utils : 공통 유틸리티 함수 (날짜, 입력 버퍼)
 #define _CRT_SECURE_NO_WARNINGS
 #include "utils.h"
 #include <stdio.h>
