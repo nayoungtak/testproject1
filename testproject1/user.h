@@ -22,6 +22,7 @@ void loadUsers();
 void saveUsers();
 void signUp();
 int login();
+void deleteAccount();
 int isUserExists(const char* userId);
 int findUserIndex(const char* userId);
 

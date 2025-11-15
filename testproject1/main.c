@@ -83,7 +83,8 @@ void mainMenu() {
         printf("2. 도서 반납\n");
         printf("3. 대출 연장 신청\n");
         printf("4. 대출 현황 출력\n");
-        printf("5. 로그아웃\n");
+        printf("5. 회원 탈퇴\n");
+        printf("6. 로그아웃\n");
         printf("0. 종료\n");
         printf("========================================\n");
         printf("선택: ");
@@ -104,6 +105,12 @@ void mainMenu() {
             showBorrowStatus();
             break;
         case 5:
+            deleteAccount();
+            if (currentUserId[0] == '\0') {
+                return;
+            }
+            break;
+        case 6:
             currentUserId[0] = '\0';
             printf("\n로그아웃 되었습니다.\n");
             return;

@@ -80,7 +80,7 @@ void signUp() {
     scanf("%s", newUser.userName);
     clearInputBuffer();
 
-    printf("전화번호: ");
+    printf("전화번호: (예시:010-0000-0000)");
     scanf("%s", newUser.phone);
     clearInputBuffer();
 
@@ -123,6 +123,57 @@ int login() {
 
     printf("\n아이디 또는 비밀번호가 일치하지 않습니다.\n");
     return 0;
+}
+
+void deleteAccount() {
+    system("cls");
+    printf("\n========================================\n");
+    printf("           회원 탈퇴\n");
+    printf("========================================\n");
+
+    int userIdx = findUserIndex(currentUserId);
+
+    if (users[userIdx].borrowCount > 0) {
+        printf("대출 중인 도서가 있어 회원 탈퇴가 불가능합니다.\n");
+        printf("모든 도서를 반납한 후 다시 시도해주세요.\n");
+        return;
+    }
+
+    printf("\n정말로 회원 탈퇴하시겠습니까?\n");
+    printf("탈퇴 후 모든 정보가 삭제됩니다.\n");
+    printf("계속하시려면 비밀번호를 입력하세요: ");
+
+    char password[MAX_PW];
+    scanf("%s", password);
+    clearInputBuffer();
+
+    if (strcmp(users[userIdx].password, password) != 0) {
+        printf("\n비밀번호가 일치하지 않습니다.\n");
+        return;
+    }
+
+    printf("\n최종 확인: 정말 탈퇴하시겠습니까? (y/n): ");
+    char confirm;
+    scanf("%c", &confirm);
+    clearInputBuffer();
+
+    if (confirm != 'y' && confirm != 'Y') {
+        printf("\n회원 탈퇴가 취소되었습니다.\n");
+        return;
+    }
+
+    // 사용자 정보 삭제 (배열에서 제거)
+    for (int i = userIdx; i < userCount - 1; i++) {
+        users[i] = users[i + 1];
+    }
+    userCount--;
+
+    saveUsers();
+
+    printf("\n회원 탈퇴가 완료되었습니다.\n");
+    printf("그동안 이용해주셔서 감사합니다.\n");
+
+    currentUserId[0] = '\0';  // 로그아웃 처리
 }
 
 int isUserExists(const char* userId) {
