@@ -14,7 +14,7 @@ void loadUsers() {
     if (fp == NULL) {
         return;
     }
-
+    
     userCount = 0;
     while (fscanf(fp, "%s %s %s %s %d %d",
         users[userCount].userId,

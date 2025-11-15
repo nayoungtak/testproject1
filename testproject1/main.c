@@ -1,3 +1,4 @@
+// borrow : 대출/반납/연장 기능
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
