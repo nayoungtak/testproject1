@@ -67,7 +67,6 @@ void borrowBook() {
         return;
     }
 
-    // 검색 방법 선택 추가
     printf("\n대출 방법을 선택하세요:\n");
     printf("1. 도서 번호로 대출\n");
     printf("2. 도서 이름으로 검색 후 대출\n");
@@ -80,14 +79,19 @@ void borrowBook() {
     char bookId[MAX_ID] = "";
 
     if (searchType == 1) {
-        // 기존 방식: 전체 목록 보여주기
         printf("\n대출 가능한 도서 목록:\n");
         printf("----------------------------------------\n");
         int availableCount = 0;
         for (int i = 0; i < bookCount; i++) {
             if (books[i].borrowStatus == 0) {
                 printf("[%s] %s\n", books[i].bookId, books[i].title);
-                printf("    저자: %s | 출판사: %s\n", books[i].author, books[i].publisher);
+                printf("    저자: %s", books[i].author);
+                if (strlen(books[i].editor) > 0 &&
+                    strcmp(books[i].editor, "없음") != 0 &&
+                    strcmp(books[i].editor, "-") != 0) {
+                    printf(" | 옮긴이: %s", books[i].editor);
+                }
+                printf(" | 출판사: %s\n", books[i].publisher);
                 printf("----------------------------------------\n");
                 availableCount++;
             }
@@ -115,7 +119,13 @@ void borrowBook() {
         for (int i = 0; i < bookCount; i++) {
             if (books[i].borrowStatus == 0 && strstr(books[i].title, keyword) != NULL) {
                 printf("[%s] %s\n", books[i].bookId, books[i].title);
-                printf("    저자: %s | 출판사: %s\n", books[i].author, books[i].publisher);
+                printf("    저자: %s", books[i].author);
+                if (strlen(books[i].editor) > 0 &&
+                    strcmp(books[i].editor, "없음") != 0 &&
+                    strcmp(books[i].editor, "-") != 0) {
+                    printf(" | 옮긴이: %s", books[i].editor);
+                }
+                printf(" | 출판사: %s\n", books[i].publisher);
                 printf("----------------------------------------\n");
                 foundCount++;
             }
