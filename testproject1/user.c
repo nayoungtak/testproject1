@@ -80,7 +80,7 @@ void signUp() {
     scanf("%s", newUser.userName);
     clearInputBuffer();
 
-    printf("전화번호: (예시:010-0000-0000)");
+    printf("전화번호(예시:010-0000-0000): ");
     scanf("%s", newUser.phone);
     clearInputBuffer();
 
