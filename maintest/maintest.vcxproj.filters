@@ -51,4 +51,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="book.txt" />
+    <Text Include="borrow.txt" />
+    <Text Include="user.txt" />
+  </ItemGroup>
 </Project>
