@@ -15,3 +15,4 @@ void getCurrentDate(char* date);
 int calculateDaysDiff(const char* date1, const char* date2);
 
 #endif
+

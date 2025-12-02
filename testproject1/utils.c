@@ -31,3 +31,4 @@ int calculateDaysDiff(const char* date1, const char* date2) {
 
     return (int)difftime(time2, time1) / (60 * 60 * 24);
 }
+
