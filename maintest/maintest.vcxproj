@@ -137,11 +137,6 @@
     <ClCompile Include="C:\Users\Tak\OneDrive\Desktop\C1201\book_management_project\user.c" />
     <ClCompile Include="C:\Users\Tak\OneDrive\Desktop\C1201\book_management_project\utils.c" />
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="..\testproject1\book.txt" />
-    <Text Include="..\testproject1\borrow.txt" />
-    <Text Include="..\testproject1\user.txt" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
